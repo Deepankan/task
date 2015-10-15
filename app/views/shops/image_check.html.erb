@@ -1,0 +1,27 @@
+<div class="page-header">
+  <h1>Shop Details</h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Shop Name</th>
+      <th>Shop Address</th>
+      <th>Shop Image</th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+
+      <tr>
+        <td><%=  @shop.shop_name %></td>
+        <td><%= @shop.shop_address %></td>
+        <td ><%= image_tag(@shop.avatar) %> </td>
+        <td>
+          <%= link_to t('.back', :default => t("helpers.links.back")),
+                        shops_path, :class => 'btn btn-default'  %>
+
+        </td>
+      </tr>
+
+  </tbody>
+</table>

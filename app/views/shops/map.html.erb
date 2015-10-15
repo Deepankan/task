@@ -1,0 +1,37 @@
+<div style='width: 800px;'>
+  <div id="map" style='width: 800px; height: 400px;'></div>
+
+
+
+</div>
+<script>
+
+var map = new google.maps.Map(document.getElementById('map'), {
+
+    zoom: 12,
+    // center: new google.maps.LatLng(-33.92, 151.25),
+    center: new google.maps.LatLng('<%= @lat %>', '<%= @lang %>'),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  });
+
+  var infowindow = new google.maps.InfoWindow();
+
+  var marker, i;
+
+  for (i = 0; i < 1; i++) {
+       marker = new google.maps.Marker({
+        position: new google.maps.LatLng('<%= @lat %>', '<%= @lang %>'),
+         map: map
+       });
+
+       google.maps.event.addListener(marker, 'click', (function(marker, i) {
+         return function() {
+           infowindow.setContent('<%= @address%>', '<%= @address %>');
+           infowindow.open(map, marker);
+         }
+       })(marker, i));
+     }
+
+
+
+</script>

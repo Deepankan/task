@@ -1,0 +1,40 @@
+
+
+
+
+              <div class="page-header">
+                <h1>Shop Details</h1>
+              </div>
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Shop Name</th>
+                    <th>Shop Address</th>
+                    <th>Shop Image</th>
+                    <th>Map </th>
+                    <th><%=t '.actions', :default => t("helpers.actions") %></th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                      <td><%=  @shop.shop_name %></td>
+                      <td><%= @shop.shop_address %></td>
+                      <td><%= link_to '', shops_image_check_path(@shop.id),:class => "fa fa-picture-o " %> </td>
+                      <td><%= link_to '', shops_map_path(@shop.id) ,:class => "fa fa-location-arrow ",:target=>"_blank"%> </td>
+                      <td>
+                        <%= link_to t('.back', :default => t("helpers.links.back")),
+                                      shops_path, :class => 'btn btn-default'  %>
+                        <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                                      edit_shop_path(@shop), :class => 'btn btn-default' %>
+                        <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                                      shop_path(@shop),
+                                      :method => 'delete',
+                                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                                      :class => 'btn btn-danger' %>
+
+                      </td>
+                    </tr>
+
+                </tbody>
+              </table>

@@ -1,0 +1,46 @@
+
+<%- model_class = Shop -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<%if @shops.present? %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Shop Name</th>
+      <th>Shop Address</th>
+      <th>Shop Image</th>
+      <th>Map</th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @shops.each do |shop| %>
+      <tr>
+        <td class="align-center"><%=  shop.shop_name %></td>
+        <td class="align-center"><%= shop.shop_address %></td>
+        <td class="align-center"><%= link_to ' ', shops_image_check_path(shop.id),:class => "fa fa-picture-o" %> </td>
+        <td class="align-center"><%= link_to ' ', shops_map_path(shop.id) ,:class => "fa fa-location-arrow",:target=>"_blank"%> </td>
+        <td>
+          <%= link_to t('.new', :default => t("helpers.links.new")),
+                      new_shop_path,
+                      :class => 'btn btn-primary' %>
+
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_shop_path(shop), :class => 'btn btn-default ' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      shop_path(shop),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn  btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%else%>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_shop_path,
+            :class => 'btn btn-primary' %>
+<%end%>
