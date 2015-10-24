@@ -24,6 +24,8 @@ test:
   socket: /tmp/mysql.sock
 
 
+
+
 production:
    adapter: postgresql
   database: db/production.postgresql
