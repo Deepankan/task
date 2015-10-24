@@ -4,7 +4,7 @@ gem 'mysql2', '~> 0.3.18'
 gem 'pry'
 gem 'carrierwave'
 gem "mini_magick"
-
+gem 'mysqltopostgres'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
@@ -57,4 +57,8 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+end
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
 end
