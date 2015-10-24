@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-#gem 'mysql2', '~> 0.3.18'
+gem 'mysql2', '~> 0.3.18'
 gem 'pry'
 gem 'carrierwave'
 gem "mini_magick"
@@ -12,7 +12,7 @@ gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) support
 gem 'devise'
 gem 'geocoder'
 gem "twitter-bootstrap-rails"
-
+#gem 'mysqltopostgres'
 
 gem 'geokit-rails'
 gem 'gmaps4rails'
