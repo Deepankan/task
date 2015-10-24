@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'mysql2', '~> 0.3.18'
+#gem 'mysql2', '~> 0.3.18'
 gem 'pry'
 gem 'carrierwave'
 gem "mini_magick"
 gem 'mysqltopostgres'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
+#gem "twitter-bootstrap-rails"
 
 gem 'devise'
 gem 'geocoder'
@@ -20,7 +20,7 @@ gem 'underscore-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets

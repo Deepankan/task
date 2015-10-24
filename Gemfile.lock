@@ -112,7 +112,6 @@ GEM
     minitest (5.8.1)
     multi_json (1.11.2)
     mysql-pr (2.9.11)
-    mysql2 (0.3.20)
     mysqltopostgres (0.2.15)
       activerecord (>= 3.2.6)
       activerecord-jdbc-adapter (>= 1.2.2)
@@ -230,7 +229,6 @@ DEPENDENCIES
   jquery-rails
   less-rails
   mini_magick
-  mysql2 (~> 0.3.18)
   mysqltopostgres
   pg
   pry
